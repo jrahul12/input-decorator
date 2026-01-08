@@ -1,0 +1,8 @@
+
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-md-3 mb-3" *ngFor="let cardObj of cardsArr; trackBy:trackById">
+            <app-card-card [card]="cardObj"></app-card-card>
+        </div>
+    </div>
+</div>

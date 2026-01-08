@@ -1,0 +1,39 @@
+<div class="card">
+    <div class="card-body" [ngClass]="{
+        noProd:!mobile.isAvailable
+    }">
+        <div class="row align-item-center">
+            <div class="col-md-4">
+                <img [src]="mobile.image||'https://tse4.mm.bing.net/th/id/OIP.hMlLJSmMJky9Rd1JwB86VgHaFl?pid=Api&P=0&h=220'"
+                    class="img-fluid" alt="">
+            </div>
+            <div class="col-md-6">
+                <h3>Brand:- {{mobile.brand}}</h3>
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let features of mobile.features">
+                        {{features}}
+                    </li>
+                    <h3 class="badge price mt-2" [ngClass]="{
+                        'badge-success':mobile.price
+                    }">$ {{mobile.price}} <small><del> $ ({{mobile.price*2 }})</del></small> </h3>
+                </ul>
+                <strong class="text-danger" *ngIf="mobile.noOfItems<10"> Few Items Left {{mobile.noOfItems}} </strong>
+                <strong class="text-success" *ngIf="mobile.noOfItems>=10"> Items Are Available In Stock</strong>
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-sm btn-primary mr-4">Add To Cart</button>
+                    <button class="btn btn-sm btn-warning ml-4">Buy Now</button>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <h2><span class="badge" [ngClass]="{
+                    'badge-success':mobile.rating>=3,
+                    'badge-warning':mobile.rating>=2&&mobile.rating<3,
+                    'badge-danger':mobile.rating<2
+                    
+                }">{{mobile.rating}}</span> <span class="ml-4 badge" [ngClass]="'badge-info'">50% Off </span></h2>
+            </div>
+            <strong class="text-danger isNotAvailable" *ngIf="mobile.isAvailable===false"> Product Is Not Available
+            </strong>
+        </div>
+    </div>
+</div>

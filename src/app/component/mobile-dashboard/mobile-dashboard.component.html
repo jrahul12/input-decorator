@@ -1,0 +1,8 @@
+
+<div class="mt-5 container">
+    <div class="row">
+        <div class="col-md-12 mb-4" *ngFor="let mobileObj of mobileArr; trackBy:trackById">
+            <app-mobile-card [mobile]="mobileObj"></app-mobile-card>
+        </div>
+    </div>
+</div>

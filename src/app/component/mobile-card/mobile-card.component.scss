@@ -1,0 +1,18 @@
+.price{
+    height: 32px;
+    width: 120px;
+}
+.noProd{
+    filter: blur(1px);
+    background-color: rgb(156, 153, 153);
+}
+.isNotAvailable{
+    top: 0px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
